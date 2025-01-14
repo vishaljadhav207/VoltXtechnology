@@ -37,10 +37,10 @@ const slideBackward = ()=>{
                         <img src={user_1} alt="" />
                         <div>
                             <h3>Emily Williams</h3>
-                            <span>Edusity, USA</span>
+                            <span>VoltXTechnology</span>
                         </div>
                     </div>
-                    <p>Choosing to pursue my degree at Edusity was one of the best decisions I've ever made. The supportive community, state-of-the-art facilities, and commitment to academic excellence have truly exceeded my expectations.</p>
+                    <p>STEM provides the knowledge and skills necessary to understand and solve real-world problems creatively and efficiently.</p>
                 </div>
             </li>
             <li>
@@ -49,10 +49,10 @@ const slideBackward = ()=>{
                         <img src={user_2} alt="" />
                         <div>
                             <h3>William Jackson</h3>
-                            <span>Edusity, USA</span>
+                            <span>VoltXTechnology</span>
                         </div>
                     </div>
-                    <p>Choosing to pursue my degree at Edusity was one of the best decisions I've ever made. The supportive community, state-of-the-art facilities, and commitment to academic excellence have truly exceeded my expectations.</p>
+                    <p>The practical, project-based approach in STEM fosters critical thinking and allows students to apply theoretical concepts in meaningful ways.</p>
                 </div>
             </li>
             <li>
@@ -61,10 +61,10 @@ const slideBackward = ()=>{
                         <img src={user_3} alt="" />
                         <div>
                             <h3>Emily Williams</h3>
-                            <span>Edusity, USA</span>
+                            <span>VoltXTechnology</span>
                         </div>
                     </div>
-                    <p>Choosing to pursue my degree at Edusity was one of the best decisions I've ever made. The supportive community, state-of-the-art facilities, and commitment to academic excellence have truly exceeded my expectations.</p>
+                    <p> STEM education opens doors to a wide range of lucrative and impactful careers, equipping students for industries of the future.</p>
                 </div>
             </li>
             <li>
@@ -73,10 +73,10 @@ const slideBackward = ()=>{
                         <img src={user_4} alt="" />
                         <div>
                             <h3>William Jackson</h3>
-                            <span>Edusity, USA</span>
+                            <span>VoltXTechnology</span>
                         </div>
                     </div>
-                    <p>Choosing to pursue my degree at Edusity was one of the best decisions I've ever made. The supportive community, state-of-the-art facilities, and commitment to academic excellence have truly exceeded my expectations.</p>
+                    <p> STEM empowers students to contribute to technological advancements and address global challenges like climate change, healthcare, and sustainability.</p>
                 </div>
             </li>
         </ul>
