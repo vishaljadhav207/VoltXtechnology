@@ -8,6 +8,7 @@ import Testimonials from './Components/Testimonials/Testimonials'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import VideoPlayer from './Components/VideoPlayer/VideoPlayer'
+import OurExpertTeam from './Components/Expert/Expert'
 
 const App = () => {
 
@@ -22,7 +23,8 @@ const App = () => {
         <Programs/>
         <About setPlayState={setPlayState}/>
         <Title subTitle='TESTIMONIALS' title='What Student Says'/>
-        <Testimonials/>
+        {/* <Testimonials/> */}
+        <OurExpertTeam/>
         <Title subTitle='Contact Us' title='Get in Touch'/>
         <Contact/>
         <Footer/>

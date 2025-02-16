@@ -1,0 +1,115 @@
+.our-expert-team {
+    text-align: center;
+    margin: 80px auto;
+    padding: 0 40px;
+    max-width: 1200px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #212EA0;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Team Container */
+.team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 80%;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+}
+
+/* Team Member Box */
+.team-member {
+    flex: 0 0 100%;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #212EA0;
+    margin-bottom: 10px;
+}
+
+/* Navigation Buttons */
+.next-btn, .back-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #212EA0;
+}
+
+.back-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 800px) {
+    .slider {
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-member {
+        flex: 1;
+        max-width: 250px;
+        margin: 10px;
+    }
+
+    .slider-wrapper {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .back-btn, .next-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+
+    .team-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-member h3 {
+        font-size: 18px;
+    }
+
+    .team-member p {
+        font-size: 14px;
+    }
+}

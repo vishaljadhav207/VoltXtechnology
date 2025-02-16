@@ -42,7 +42,7 @@ const Contact = () => {
         <p>Feel free to reach out through contact form or find our contact information below. Your feedback is valuable.</p>
         <ul>
             <li><img src={mail_icon} alt="" />voltxtechnologies@gmail.com</li>
-            <li><img src={phone_icon} alt="" />+91 9665826910</li>
+            <li><img src={phone_icon} alt="" />+91 9423680682</li>
             <li><img src={location_icon} alt="" />Chh Sambhajinagar<br/> Pin 431001, IND</li>
         </ul>
       </div>
