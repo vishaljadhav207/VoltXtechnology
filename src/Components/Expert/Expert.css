@@ -1,119 +1,131 @@
 .our-expert-team {
-    text-align: center;
-    margin: 80px auto;
-    padding: 1 40px;
-    max-width: 1200px;
-  }
-  
-  .section-title {
-    font-size: 32px;
-    color: #212ea0;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Team Container */
-  .team-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
+  text-align: center;
+  margin: 80px auto;
+  padding: 0 40px;
+  max-width: 1200px;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #212ea0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Team Container */
+.team-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 80%;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content; /* Ensures only required width is taken */
+  gap: 20px; /* Adds spacing between slides */
+}
+
+/* Team Member Box */
+.team-member {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 280px; /* Adjusted for better scaling */
+  background: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #212ea0;
+  margin-bottom: 15px;
+}
+
+/* Navigation Buttons */
+.next-btn,
+.back-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #212ea0;
+  z-index: 10;
+}
+
+.back-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
   .slider-wrapper {
-    overflow: hidden;
-    width: 80%;
+    width: 90%;
   }
-  
+
   .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 400%;
+    gap: 10px; /* Reduced gap for small screens */
   }
-  
-  /* Team Member Box */
+
   .team-member {
-    flex: 0 0 100%;
-    background: #f9f9f9;
-    padding: 40px; /* Increased padding for bigger cards */
-    margin: 20px; /* Increased margin for bigger cards */
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 260px;
   }
-  
+
   .team-img {
-    display: block;
-    margin: 0 auto;
-    width: 160px; /* Slightly increased width for bigger images */
-    height: 160px; /* Slightly increased height for bigger images */
-    border-radius: 50%;
-    border: 4px solid #212ea0;
-    margin-bottom: 20px; /* Increased margin for better spacing */
+    width: 120px;
+    height: 120px;
   }
-  
-  /* Navigation Buttons */
+
   .next-btn,
   .back-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    width: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    background: #212ea0;
+    display: block; /* Ensure buttons appear on mobile */
+    width: 35px;
+    padding: 8px;
   }
-  
-  .back-btn {
-    left: 0;
+}
+
+@media (max-width: 600px) {
+  .slider-wrapper {
+    width: 95%;
   }
-  
-  .next-btn {
-    right: 0;
+
+  .team-member {
+    max-width: 240px;
+    padding: 20px;
   }
-  
-  /* Responsive Design */
-  @media (min-width: 800px) {
-    .slider {
-      width: auto;
-      display: flex;
-      justify-content: center;
-    }
-  
-    .team-member {
-      flex: 1;
-      max-width: 300px; /* Increased max-width for bigger cards */
-      margin: 20px; /* Increased margin for bigger cards */
-    }
-  
-    .slider-wrapper {
-      width: 100%;
-      overflow: visible;
-    }
-  
-    .back-btn,
-    .next-btn {
-      display: none;
-    }
+
+  .team-img {
+    width: 100px;
+    height: 100px;
   }
-  
-  @media (max-width: 600px) {
-    .slider-wrapper {
-      width: 90%;
-    }
-  
-    .team-img {
-      width: 120px; /* Adjusted width for smaller screens */
-      height: 120px; /* Adjusted height for smaller screens */
-    }
-  
-    .team-member h3 {
-      font-size: 18px;
-    }
-  
-    .team-member p {
-      font-size: 14px;
-    }
+
+  .team-member h3 {
+    font-size: 16px;
   }
+
+  .team-member p {
+    font-size: 13px;
+  }
+}
