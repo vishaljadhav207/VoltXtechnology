@@ -1,94 +1,93 @@
 .programs-container {
-    position: relative;
-    width: 90%;
-    margin: 80px auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+  position: relative;
+  width: 90%;
+  margin: 80px auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
 }
 
 .programs {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  min-height: 370px; /* Adjust based on the .program height */
 }
 
 .program {
-    flex: 0 0 calc(100% / 3);
-    padding: 10px;
-    position: relative;
+  flex: 0 0 calc(100% / 3);
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .program img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
+  width: 100%;
+  height: 340px; /* Set the height of the image */
+  object-fit: cover; /* Ensures image fills the space without distortion */
+  border-radius: 10px;
+  display: block;
 }
 
+/* Caption Styling */
 .caption {
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 15, 152, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    cursor: pointer;
-    opacity: 0;
-    padding-top: 70%;
-    transition: 0.4s;
-}
-
-.caption img {
-    width: 60px;
-    margin-bottom: 10px;
+  position: absolute;
+  bottom: 0; /* Position the caption at the bottom */
+  left: 0;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  opacity: 1; /* Set opacity to 1 to make it always visible */
+  transition: none; /* Remove transition */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+  font: 30px "cursive", sans-serif;
 }
 
 .program:hover .caption {
-    opacity: 1;
-    padding-top: 0;
+  opacity: 1 !important;
 }
-
 /* Navigation buttons */
-.prev, .next {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+.prev,
+.next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 5px;
 }
 
 .prev {
-    left: 0;
+  left: 0;
 }
 
 .next {
-    right: 0;
+  right: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .program {
-        flex: 0 0 calc(100% / 2); /* Show 2 slides on smaller screens */
-    }
+  .program {
+    flex: 0 0 calc(100% / 2); /* Show 2 slides on smaller screens */
+  }
 }
 
 @media (max-width: 500px) {
-    .program {
-        flex: 0 0 100%; /* Show 1 slide on mobile screens */
-    }
+  .program {
+    flex: 0 0 100%; /* Show 1 slide on mobile screens */
+  }
 }

@@ -18,7 +18,7 @@ const About = ({ setPlayState }) => {
         />
       </div>
       <div className="about-right">
-        <h3>VoltXTechnology</h3>
+        <h3>voltx technologies</h3>
         <h2>Empowering the Innovators of Tomorrow</h2>
         <p>
           At Voltx Technologies, we are dedicated to shaping the future of

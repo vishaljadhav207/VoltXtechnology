@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Programs.css";
 import program_1 from "../../assets/Robotic_Lab.jpg";
 import program_2 from "../../assets/Robotic_kits.png";
@@ -7,18 +7,13 @@ import program_4 from "../../assets/IOT.png";
 import program_5 from "../../assets/3d_printing.jpeg";
 import program_6 from "../../assets/robotic_3_hand.jpg";
 
-import program_icon_1 from "../../assets/program-icon-1.png";
-import program_icon_2 from "../../assets/program-icon-2.png";
-
-import program_icon_3 from "../../assets/program-icon-3.png";
-
 const programsData = [
-  { img: program_1, icon: program_icon_1, title: "Robotic Lab" },
-  { img: program_2, icon: program_icon_2, title: "Robotic Kit" },
-  { img: program_3, icon: program_icon_3, title: "Industrial Workshops" },
-  { img: program_4, icon: program_icon_3, title: "IoT" },
-  { img: program_5, icon: program_icon_3, title: "3D Printing" },
-  { img: program_6, icon: program_icon_3, title: "Internship" },
+  { img: program_1, title: "Robotic Lab" },
+  { img: program_2, title: "Robotic Kit" },
+  { img: program_3, title: "Industrial Workshops" },
+  { img: program_4, title: "IoT" },
+  { img: program_5, title: "3D Printing" },
+  { img: program_6, title: "Internship" },
 ];
 
 const Programs = () => {
@@ -28,7 +23,7 @@ const Programs = () => {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + visibleSlides < totalSlides ? prevIndex + 1 : 0
+      prevIndex + 1 < totalSlides - (visibleSlides - 1) ? prevIndex + 1 : 0
     );
   };
 
@@ -37,6 +32,11 @@ const Programs = () => {
       prevIndex > 0 ? prevIndex - 1 : totalSlides - visibleSlides
     );
   };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
 
   return (
     <div className="programs-container">
@@ -52,9 +52,8 @@ const Programs = () => {
         >
           {programsData.map((program, index) => (
             <div className="program" key={index}>
-              <img src={program.img} alt={program.title} height={340} />
+              <img src={program.img} alt={program.title} />
               <div className="caption">
-                <img src={program.icon} alt="" />
                 <p>{program.title}</p>
               </div>
             </div>

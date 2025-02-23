@@ -3,7 +3,7 @@ import "./Expert.css";
 import next_icon from "../../assets/next-icon.png";
 import back_icon from "../../assets/back-icon.png";
 import director from "../../assets/director.jpeg";
-// import business_dev from "../../assets/business-dev.png";
+import business_dev from "../../assets/business_dev.png";
 import firmware_eng from "../../assets/firmware-eng.jpg";
 import hardware_eng from "../../assets/hardware-eng.jpg";
 
@@ -11,13 +11,13 @@ const teamMembers = [
   {
     img: director,
     name: "Vishal Khandagale",
-    role: "Director",
+    role: "Founder & Director",
   },
-//   {
-//     img: business_dev,
-//     name: "Prashant Khandagale",
-//     role: "Business Development Officer",
-//   },
+  {
+    img: business_dev,
+    name: "Prashant Khandagale",
+    role: "Business Development Officer",
+  },
   {
     img: firmware_eng,
     name: "Vivek Jadhav",

@@ -13,6 +13,7 @@ nav{
 }
 .logo {
     width: 180px;
+    border-radius: 15px 50px 30px;
 }
 nav ul li{
     display: inline-block;
