@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import "./Expert.css";
 import next_icon from "../../assets/next-icon.png";
 import back_icon from "../../assets/back-icon.png";
-import director from "../../assets/director.jpeg";
+import director from "../../assets/director.jpg";
 import business_dev from "../../assets/business_dev.png";
-import firmware_eng from "../../assets/firmware-eng.jpg";
+import firmware_eng from "../../assets/firmware-eng.png";
 import hardware_eng from "../../assets/hardware-eng.jpg";
 
 const teamMembers = [

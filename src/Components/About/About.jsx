@@ -18,8 +18,8 @@ const About = ({ setPlayState }) => {
         />
       </div>
       <div className="about-right">
-        <h3>voltx technologies</h3>
-        <h2>Empowering the Innovators of Tomorrow</h2>
+        <h2>voltx technologies</h2>
+        <h3>Empowering the Innovators of Tomorrow</h3>
         <p>
           At Voltx Technologies, we are dedicated to shaping the future of
           education through innovative technological solutions. Specializing in

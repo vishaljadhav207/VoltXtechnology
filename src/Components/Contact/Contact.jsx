@@ -43,7 +43,7 @@ const Contact = () => {
         <ul>
             <li><img src={mail_icon} alt="" />voltxtechnologies@gmail.com</li>
             <li><img src={phone_icon} alt="" />+91 9423680682</li>
-            <li><img src={location_icon} alt="" />Chh Sambhajinagar<br/> Pin 431001, IND</li>
+            <li><img src={location_icon} alt="" />Chh Sambhajinagar<br/> Pin 431007, IND</li>
         </ul>
       </div>
       <div className="contact-col">

@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <p>© 2025 VoltXTechnology. All rights reserved.</p>
+      <p>© 2025 VoltXTechnologies. All rights reserved.</p>
       <ul>
         <li>
           <a target="_blank">Terms of Services</a>
