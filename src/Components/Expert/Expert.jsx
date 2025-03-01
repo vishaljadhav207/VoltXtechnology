@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Expert.css";
 import next_icon from "../../assets/next-icon.png";
 import back_icon from "../../assets/back-icon.png";
@@ -32,19 +32,23 @@ const teamMembers = [
 
 const OurExpertTeam = () => {
   const slider = useRef();
-  let scrollPosition = 0;
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const teamMemberWidth = 300; // Adjust this value based on the actual width of the team member elements
 
   const slideForward = () => {
-    if (scrollPosition > -(teamMembers.length - 1) * 100) {
-      scrollPosition -= 100;
-      slider.current.style.transform = `translateX(${scrollPosition}%)`;
+    const maxScrollPosition = -(teamMembers.length - 1) * teamMemberWidth;
+    if (scrollPosition > maxScrollPosition) {
+      const newScrollPosition = scrollPosition - teamMemberWidth;
+      setScrollPosition(newScrollPosition);
+      slider.current.style.transform = `translateX(${newScrollPosition}px)`;
     }
   };
 
   const slideBackward = () => {
     if (scrollPosition < 0) {
-      scrollPosition += 100;
-      slider.current.style.transform = `translateX(${scrollPosition}%)`;
+      const newScrollPosition = scrollPosition + teamMemberWidth;
+      setScrollPosition(newScrollPosition);
+      slider.current.style.transform = `translateX(${newScrollPosition}px)`;
     }
   };
 
@@ -52,7 +56,12 @@ const OurExpertTeam = () => {
     <div className="our-expert-team">
       <h2 className="section-title">Our Expert Team</h2>
       <div className="team-container">
-        <img src={back_icon} alt="Previous" className="back-btn" onClick={slideBackward} />
+        <img
+          src={back_icon}
+          alt="Previous"
+          className="back-btn"
+          onClick={slideBackward}
+        />
         <div className="slider-wrapper">
           <div className="slider" ref={slider}>
             {teamMembers.map((member, index) => (
@@ -64,7 +73,12 @@ const OurExpertTeam = () => {
             ))}
           </div>
         </div>
-        <img src={next_icon} alt="Next" className="next-btn" onClick={slideForward} />
+        <img
+          src={next_icon}
+          alt="Next"
+          className="next-btn"
+          onClick={slideForward}
+        />
       </div>
     </div>
   );
