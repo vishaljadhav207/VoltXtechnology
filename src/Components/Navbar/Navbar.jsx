@@ -1,40 +1,68 @@
-import React, { useEffect, useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo_v_.png'
-import menu_icon from '../../assets/menu-icon.png'
+import React, { useEffect, useState } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo_v_.png';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-scroll';
 
-
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const [sticky, setSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    useEffect(()=>{
-        window.addEventListener('scroll', ()=>{
-            window.scrollY > 50 ? setSticky(true) : setSticky(false);
-        })
-    },[]);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
-
-    const [mobileMenu, setMobileMenu] = useState(false);
-    const toggleMenu = ()=>{
-      mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
-    }
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; };
+  }, [menuOpen]);
 
   return (
-    <nav className={`container ${sticky? 'dark-nav' : ''}`}>
-      <img src={logo} alt="" className='logo'  />
-      <ul className={mobileMenu?'':'hide-mobile-menu'}>
-        <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
-        <li><Link to='program' smooth={true} offset={-260} duration={500}>Program</Link></li>
-        <li><Link to='about' smooth={true} offset={-150} duration={500}>About us</Link></li>
-        {/* <li><Link to='campus' smooth={true} offset={-260} duration={500}>Campus</Link></li> */}
-        {/* <li><Link to='testimonials' smooth={true} offset={-260} duration={500}>Testimonials</Link></li> */}
-        <li><Link to='contact' smooth={true} offset={-260} duration={500} className='btn'>Contact us</Link></li>
-      </ul>
-      <img src={menu_icon} alt="" className='menu-icon' onClick={toggleMenu}/>
-    </nav>
-  )
-}
+    <nav className={`nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
+      <div className="nav-container">
+        <Link to="hero" smooth onClick={closeMenu}>
+          <img src={logo} alt="Logo" className="nav-logo" />
+        </Link>
 
-export default Navbar
+        <button 
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+          aria-label="Toggle navigation"
+        >
+          {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+        </button>
+
+        <div className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+          <div className="nav-menu-inner">
+            <NavLink to="hero" onClick={closeMenu}>Home</NavLink>
+            <NavLink to="program" onClick={closeMenu}>Program</NavLink>
+            <NavLink to="about" onClick={closeMenu}>About</NavLink>
+            <NavLink to="contact" onClick={closeMenu} isButton>Contact</NavLink>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+const NavLink = ({ to, children, onClick, isButton = false }) => (
+  <Link
+    to={to}
+    smooth
+    offset={isButton ? -260 : -80}
+    duration={500}
+    className={`nav-link ${isButton ? 'nav-button' : ''}`}
+    onClick={onClick}
+  >
+    {children}
+  </Link>
+);
+
+export default Navbar;
